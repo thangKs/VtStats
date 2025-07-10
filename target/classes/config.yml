@@ -1,0 +1,46 @@
+# ------------------------------------------------------------------ #
+#                       VtStats Configuration                        #
+# ------------------------------------------------------------------ #
+
+# Language settings for the plugin.
+# Available languages are defined by the files in the 'language' folder (e.g., messages_en.yml, messages_vi.yml).
+# The plugin will load the file corresponding to the value set here.
+language: "vi"
+
+# Confirmation system for dangerous commands.
+# This helps prevent accidental data wipes.
+confirmation:
+  # If true, dangerous commands (like resetting all stats for all players) will require a second confirmation command.
+  required: true
+  # The time in seconds a user has to type '/vtstats confirm' before the request expires.
+  timeout-seconds: 30
+
+# Configure how actions are logged.
+logging:
+  # Enable or disable all logging from this plugin.
+  enable: true
+  # If true, logs will be saved to a file in /plugins/VtStats/logs/vtstats.log.
+  # If false, logs will only be shown in the server console.
+  log-to-file: true
+  # Toggle logging for specific command actions.
+  log-set: true
+  log-reset-player: true
+  log-reset-all-player: true
+  log-reset-server: true
+  log-reset-all-server: true
+
+# Backup settings for player statistics.
+backup:
+  # If true, a backup will be automatically created before any reset command is executed.
+  auto-backup-on-reset: true
+  # The maximum number of backup folders to keep. The oldest backups will be deleted to maintain this limit.
+  # Set to 0 to disable the limit and keep all backups.
+  max-backups: 10
+
+# A list of statistics that cannot be modified by any of the plugin's commands.
+# This is useful for protecting important data like playtime.
+# Use the official Bukkit Statistic enum names (e.g., PLAY_ONE_MINUTE).
+protected-stats:
+  - "PLAY_ONE_MINUTE"
+  - "TIME_SINCE_DEATH"
+  - "TIME_SINCE_REST"

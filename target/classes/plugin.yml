@@ -1,0 +1,11 @@
+name: VtStats
+version: 1.0
+main: com.vtstats.VtStats
+api-version: 1.17
+author: thangks
+description: An advanced statistics management plugin.
+commands:
+  vtstats:
+    description: Lệnh chính của VtStats.
+    aliases: [vts, stats]
+    permission: vtstats.use
